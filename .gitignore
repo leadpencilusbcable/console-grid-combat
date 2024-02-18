@@ -477,3 +477,5 @@ $RECYCLE.BIN/
 *.lnk
 
 *.sln
+res/*
+!res/teams-example.json

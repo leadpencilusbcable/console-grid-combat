@@ -37,6 +37,20 @@ namespace RPG
             RemoveCellItem(startPos);
         }
 
+        public List<Vector2i> GetVacantCells()
+        {
+            List<Vector2i> vacantPos = new();
+
+            for(int i = 0; i < Cells.GetLength(0); i++){
+                for(int i2 = 0; i2 < Cells.GetLength(1); i2++){
+                    if(Cells[i, i2].CellItem == null)
+                        vacantPos.Add(new Vector2i(i + 1, i2 + 1));
+                }
+            }
+
+            return vacantPos;
+        }
+
         public override string ToString()
         {
             string separator = new('-', (CellWidth + 2) * Cells.GetLength(1));

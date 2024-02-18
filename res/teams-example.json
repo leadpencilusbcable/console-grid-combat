@@ -1,0 +1,36 @@
+[
+    {
+        "name": "My team",
+        "isPlayer": true,
+        "members": [
+            {
+                "name": "Wendy",
+                "initalHealth": 30,
+                "moveSpeed": 3
+            }
+        ],
+        "relationships": [
+            {
+                "teamName": "Not my team",
+                "relationship": "Hostile"
+            }
+        ]
+    },
+    {
+        "name": "Not my team",
+        "isPlayer": false,
+        "members": [
+            {
+                "name": "EvilWendy",
+                "initalHealth": 10,
+                "moveSpeed": 3
+            }
+        ],
+        "relationships": [
+            {
+                "teamName": "My team",
+                "relationship": "Hostile"
+            }
+        ]
+    }
+]
