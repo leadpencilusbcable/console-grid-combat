@@ -1,5 +1,7 @@
 static class HelperFunctions
 {
+    public static readonly Random rand = new();
+
     public static string ConcatStringsByLine(string a, string b)
     {
         List<string> aLines = a.Split(Environment.NewLine).ToList();

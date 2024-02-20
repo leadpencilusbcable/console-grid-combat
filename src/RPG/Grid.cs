@@ -4,12 +4,17 @@ namespace RPG
 {
     class Grid
     {
+        public int Height { get; }
+        public int Width { get; }
         private Cell[,] Cells;
         private readonly int CellHeight;
         private readonly int CellWidth;
 
         public Grid(int height, int width, int cellHeight, int cellWidth)
         {
+            Height = height;
+            Width = width;
+
             Cells = new Cell[height, width];
 
             for(int i = 0; i < Cells.GetLength(0); i++){
@@ -19,6 +24,11 @@ namespace RPG
 
             CellHeight = cellHeight;
             CellWidth = cellWidth;
+        }
+
+        public CellItem GetCellItem(Vector2i pos)
+        {
+            return Cells[pos.X - 1, pos.Y - 1].CellItem;
         }
 
         public void AddCellItem(CellItem cellItem, Vector2i pos)
