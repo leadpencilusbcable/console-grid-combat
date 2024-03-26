@@ -1,20 +1,35 @@
 namespace RPG
 {
-    class Character : CellItem
+    class Character
     {
         public string Name { get; }
-        public int Health { get ; set; }
+        public Status Status { get; set; }
+        public int MaxHealth { get; }
+        public int Health { get; set; }
         public int MoveSpeed { get; set; }
-        public string TeamName { get; }
         public int Initiative { get; }
 
-        public Character(string visualRepresentation, string name, int health, int moveSpeed, string teamName, int initiative): base(visualRepresentation)
+        public Character(string name, int maxHealth, int moveSpeed, int initiative)
         {
             Name = name;
-            Health = health;
+            MaxHealth = maxHealth;
+            Health = maxHealth;
             MoveSpeed = moveSpeed;
-            TeamName = teamName;
             Initiative = initiative;
+
+            CheckIfDead();
+        }
+
+        public void TakeDamage(int damage)
+        {
+            Health -= damage;
+
+            CheckIfDead();
+        }
+
+        private void CheckIfDead()
+        {
+            Status = MaxHealth > 0 ? Status.Healthy : Status.Dead;
         }
     }
 }

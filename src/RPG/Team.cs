@@ -4,15 +4,15 @@ namespace RPG
     {
         public string Name { get; }
         public bool IsPlayer { get; }
-        public List<Character> Members { get; }
         public Dictionary<string, Relationship> TeamRelationships { get; }
+        public List<Tuple<Character, Vector2i>> Characters { get; }
 
-        public Team(string name, bool isPlayer, List<Character> members, Dictionary<string, Relationship> teamRelationships)
+        public Team(string name, bool isPlayer, Dictionary<string, Relationship> teamRelationships, List<Tuple<Character, Vector2i>> characters)
         {
             Name = name;
             IsPlayer = isPlayer;
-            Members = members;
             TeamRelationships = teamRelationships;
+            Characters = characters;
         }
     }
 }

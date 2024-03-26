@@ -6,7 +6,7 @@ namespace RPG
     {
         public int Height { get; }
         public int Width { get; }
-        private Cell[,] Cells;
+        private readonly Cell[,] Cells;
         private readonly int CellHeight;
         private readonly int CellWidth;
 

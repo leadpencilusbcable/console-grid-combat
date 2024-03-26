@@ -1,6 +1,6 @@
 namespace RPG
 {
-    abstract class CellItem
+    class CellItem
     {
         public string VisualRepresentation { get; set; }
 
